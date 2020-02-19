@@ -12,23 +12,19 @@
 	box-sizing: border-box;
 }
 
-header {
+.main-menu {
 	width: 100%;
 	font-family: "Roboto", sans-serif;
+	position: fixed;
+	z-index: 200;
 }
 
-.grey-bar {
+.bar-ontop {
 	width: 100%;
 	height: 56px;
 	background-color: var(--c-pink-dark);
 	position: fixed;
 	z-index: 8;
-}
-
-.main-menu {
-	width: 100%;
-	margin: 0 auto;
-	position: relative;
 }
 
 /* checkbox styling */
@@ -78,7 +74,7 @@ header {
 	width: 35px;
 	height: 3px;
 	border-radius: 20%;
-	background: inherit; /*inherit value from parent*/
+	background: inherit;
 	position: absolute;
 	transition: all 0.4s ease;
 }
@@ -200,20 +196,14 @@ input:not(checked) ~ .nav-menu {
 /* vertical nav */
 
 @media screen and (max-width: 850px) {
-	.grey-bar {
+	.bar-ontop {
 		height: 100%;
 		width: 56px;
 	}
 
-	header {
-		padding: 0;
-		min-width: 300px;
-		width: 40%;
-	}
-
 	.main-menu {
-		width: auto;
-		height: 100%;
+		padding: 0;
+		height: 100vh;
 	}
 
 	.burger-box,
@@ -233,11 +223,13 @@ input:not(checked) ~ .nav-menu {
 		padding-left: 12px;
 	}
 
-	.icon:nth-child(2) {
+	.icon:last-child {
 		padding-top: 35px;
 	}
 
 	.nav-menu {
+		min-width: 300px;
+		width: 40%;
 		height: 100vh;
 		transform: translate(-120%, 0);
 	}
